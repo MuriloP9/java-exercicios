@@ -9,7 +9,7 @@ public class BusinessAccount extends Account{ /* Acabei de declarar com 'extends
     }
 
     public BusinessAccount(Integer number, Double balance, String holder, Double loanLimit) {
-        super(number, balance, holder);
+        super(number, holder, balance);
         this.loanLimit = loanLimit;
     }
 
@@ -26,4 +26,10 @@ public class BusinessAccount extends Account{ /* Acabei de declarar com 'extends
             balance += amount - 10.0;
         }
     }
+    @Override
+    public void withdraw(double amount){
+        super.withdraw(amount);
+        balance -= 2.0;
+    }
+
 }
